@@ -1,0 +1,27 @@
+<header class="border-b border-gray-800">
+    <nav class="container mx-auto flex items-center justify-between px-4 py-6">
+        <div class="flex items-center">
+            <a href="{{ path('home') }}">
+                <img src="{{ asset('images/logo.svg') }}" alt="laracasts" class="w-32 flex-none">
+            </a>
+            <ul class="flex ml-16 space-x-8">
+                <li><a href="#" class="hover:text-gray-400">Games</a></li>
+                <li><a href="#" class="hover:text-gray-400">Reviews</a></li>
+                <li><a href="#" class="hover:text-gray-400">Coming Soon</a></li>
+            </ul>
+        </div>
+        <div class="flex items-center">
+            <div class="relative">
+                <input type="text" class="bg-gray-800 text-sm rounded-full focus:outline-none focus:shadow-outline w-64 px-3 py-1 pl-8" placeholder="Search...">
+                <div class="absolute top-0 flex items-center h-full ml-2">
+                    <i class="fa fa-search"></i>
+                </div>
+            </div>
+            <div class="ml-6">
+                <a href="#">
+                    <img src="{{ asset('images/avatar.png') }}" alt="avatar" class="rounded-full w-8">
+                </a>
+            </div>
+        </div>
+    </nav>
+</header>

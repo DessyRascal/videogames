@@ -1,0 +1,48 @@
+@tailwind base;
+
+@tailwind components;
+
+@import "~font-awesome";
+
+body {
+    @apply bg-gray-900;
+    @apply text-white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    @apply text-blue-500;
+    @apply uppercase;
+    @apply tracking-wide;
+    @apply font-semibold;
+}
+
+.rating-circle {
+    @apply absolute;
+    @apply bottom-0;
+    @apply right-0;
+    @apply w-16;
+    @apply h-16;
+    @apply bg-gray-800;
+    @apply rounded-full;
+    right: -20px;
+    bottom: -20px;
+
+    &-text {
+        @apply font-semibold;
+        @apply text-xs;
+        @apply flex;
+        @apply justify-center;
+        @apply items-center;
+        @apply h-full;
+    }
+}
+
+.recently-reviewed {
+    &-game {
+        .rating-circle {
+            @apply bg-gray-900;
+        }
+    }
+}
+
+@tailwind utilities;
