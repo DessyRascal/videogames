@@ -1,17 +1,6 @@
 <h2>Popular Games</h2>
 <div class="popular-games text-sm grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12 border-b border-gray-800 pb-16">
-    {% for i in range(1, 6) %}
-        <div class="game mt-8">
-            <div class="relative block md:inline-block">
-                <a href="#">
-                    <img src="https://via.placeholder.com/400x500" alt="game cover" class="w-full hover:opacity-75 transition ease-in-out duration-150">
-                </a>
-                <div class="rating-circle">
-                    <div class="rating-circle-text">80%</div>
-                </div>
-            </div>
-            <a href="#" class="block text-base font-semibold leading-tight hover:text-gray-400 mt-8">Game Title</a>
-            <div class="text-gray-400 mt-1">Platforms</div>
-        </div>
+    {% for i in range(1, 12) %}
+        {{ include('games/_game-card.html.twig') }}
     {% endfor %}
 </div>

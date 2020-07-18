@@ -1,0 +1,100 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Show{% endblock %}
+
+{% block body %}
+    <div class="container mx-auto px-4">
+        <div class="game-details border-b border-gray-800 pb-12 flex">
+            <div class="flex-none">
+                <img src="https://via.placeholder.com/400x500" alt="game cover" class="">
+            </div>
+            <div class="ml-12 mr-64">
+                <h2 class="text-white capitalize">Game Title</h2>
+                <div class="text-gray-400 mt-1">
+                    <span>Genres</span>
+                    &middot;
+                    <span>Publisher</span>
+                    &middot;
+                    <span>Platforms</span>
+                </div>
+
+                <div class="flex flex-wrap items-center mt-8">
+                    <div class="flex items-center">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full">
+                            <div class="font-semibold text-xs flex justify-center items-center h-full">
+                                90%
+                            </div>
+                        </div>
+                        <div class="ml-4 text-xs">
+                            Member<br />Score
+                        </div>
+                    </div>
+                    <div class="flex items-center ml-12">
+                        <div class="w-16 h-16 bg-gray-800 rounded-full">
+                            <div class="font-semibold text-xs flex justify-center items-center h-full">
+                                92%
+                            </div>
+                        </div>
+                        <div class="ml-4 text-xs">
+                            Critic<br />Score
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 ml-12">
+                        <div class="w-8 h-8 bg-gray-800 rounded-full flex justify-center items-center">
+                            <a href="#" class="hover:text-gray-400">
+                                <i class="fa fa-globe"></i>
+                            </a>
+                        </div>
+                        <div class="w-8 h-8 bg-gray-800 rounded-full flex justify-center items-center">
+                            <a href="#" class="hover:text-gray-400">
+                                <i class="fa fa-instagram"></i>
+                            </a>
+                        </div>
+                        <div class="w-8 h-8 bg-gray-800 rounded-full flex justify-center items-center">
+                            <a href="#" class="hover:text-gray-400">
+                                <i class="fa fa-twitter"></i>
+                            </a>
+                        </div>
+                        <div class="w-8 h-8 bg-gray-800 rounded-full flex justify-center items-center">
+                            <a href="#" class="hover:text-gray-400">
+                                <i class="fa fa-facebook"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <p class="mt-12">
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deleniti dolorum eum ullam? At est illo maxime molestiae mollitia officiis, porro qui rem totam voluptatum. A ab blanditiis cumque cupiditate dolore ea earum error explicabo fuga illo ipsum laboriosam laborum, molestias nihil provident qui quo repudiandae sunt velit voluptate? Corporis, et!
+                </p>
+                <div class="mt-12">
+                    <button class="flex items-center bg-blue-500 text-white font-semibold px-4 py-4 hover:bg-blue-600 rounded transition ease-in-out duration-150">
+                        <i class="fa fa-play"></i>
+                        <span class="ml-2">Play Trailer</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+        <div class="images-container border-b border-gray-800 pb-12 mt-8">
+            <h2>Images</h2>
+            <div class="grid grid-cols-3 gap-12 mt-8">
+                {% for i in range(1, 6) %}
+                    <div class="">
+                        <a href="#">
+                            <img src="https://via.placeholder.com/400x200" alt="screenshot" class="hover:opacity-75 transition ease-in-out duration-150">
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+        <div class="similar-games-container mt-8">
+            <h2>Similar Games</h2>
+            <div class="popular-games text-sm grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-12">
+                {% for i in range(1, 6) %}
+                    {{ include('games/_game-card.html.twig') }}
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock %}
+
+
+

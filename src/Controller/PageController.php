@@ -14,4 +14,12 @@ class PageController extends AbstractController
     {
         return $this->render('page/index.html.twig');
     }
+
+    /**
+     * @Route("/show", name="show")
+     */
+    public function show()
+    {
+        return $this->render('page/show.html.twig');
+    }
 }
