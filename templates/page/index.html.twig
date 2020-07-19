@@ -4,10 +4,10 @@
 
 {% block body %}
     <div class="container mx-auto px-4">
-        {{ include('games/_popular-games.html.twig') }}
+        {{ include('games/_popular-games.html.twig', { 'games' : popularGames }) }}
         <div class="flex flex-col lg:flex-row my-10">
-            {{ include('games/_recently-reviewed.html.twig') }}
-            {{ include('games/_most-anticipated.html.twig') }}
+            {{ include('games/_recently-reviewed.html.twig', { 'games' : recentlyReviewedGames }) }}
+            {{ include('games/_most-anticipated.html.twig', { 'mostAnticipatedGames' : mostAnticipatedGames, 'comingSoonGames' : comingSoonGames }) }}
         </div>
     </div>
 {% endblock %}

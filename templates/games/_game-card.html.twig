@@ -1,12 +1,21 @@
+{#{{ dump(game) }}#}
 <div class="game mt-8">
     <div class="relative block md:inline-block">
         <a href="#">
-            <img src="https://via.placeholder.com/400x500" alt="game cover" class="w-full hover:opacity-75 transition ease-in-out duration-150">
+            <img src="{{ game['cover']['url']|replace({ 'thumb' : 'cover_big' }) }}" alt="{{ game['name'] }} cover" class="w-full hover:opacity-75 transition ease-in-out duration-150">
         </a>
-        <div class="rating-circle">
-            <div class="rating-circle-text">80%</div>
-        </div>
+        {% if game['rating'] is defined %}
+            <div class="rating-circle">
+                <div class="rating-circle-text">{{ game['rating']|round }}%</div>
+            </div>
+        {% endif %}
     </div>
-    <a href="#" class="block text-base font-semibold leading-tight hover:text-gray-400 mt-8">Game Title</a>
-    <div class="text-gray-400 mt-1">Platforms</div>
+    <a href="#" class="block text-base font-semibold leading-tight hover:text-gray-400 mt-8">{{ game['name'] }}</a>
+    <div class="text-gray-400 mt-1">
+        {% for platform in game['platforms'] %}
+            {% if platform['abbreviation'] is defined %}
+                {{ platform['abbreviation'] }},
+            {% endif %}
+        {% endfor %}
+    </div>
 </div>
